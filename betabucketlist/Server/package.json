@@ -1,0 +1,27 @@
+{
+  "name": "bbl",
+  "version": "1.0.0",
+  "description": "Beta Bucket Lis",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev:server": "nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MenakaIyer/BBL.git"
+  },
+  "keywords": [
+    "Travel"
+  ],
+  "author": "Menaka Iyer",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MenakaIyer/BBL/issues"
+  },
+  "homepage": "https://github.com/MenakaIyer/BBL#readme",
+  "dependencies": {
+    "express": "^4.17.3"
+  }
+}
