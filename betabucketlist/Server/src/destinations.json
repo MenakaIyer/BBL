@@ -1,0 +1,99 @@
+[
+  {
+    "Country": "Aruba",
+    "Demonym(s)": "Aruban",
+    "CapitalCity": "Oranjestad",
+    "HelloNativeLanguages": [
+      "{ lang : \"Papiamento\"}",
+      "{  hello : \"Bon Dia! \"}",
+      "{  lang : \"Dutch\"}",
+      "{  hello :\"Hallo\"}"
+    ],
+    "FlagImg": "https://www.countryflags.com/wp-content/uploads/aruba-flag-jpg-xl.jpg",
+    "Currency": "Aruban florin (AWG)",
+    "MainAirportName": "Queen Beatrix International Airport",
+    "IATACode": "AUA",
+    "DrivingSide": "Right",
+    "TimeZone": "UTC-4:00 (AST)"
+  },
+  {
+    "Country": "Bahamas",
+    "Demonym(s)": "Bahamian",
+    "CapitalCity": "Nassau",
+    "HelloNativeLanguages": "{\"lang\":\"English”},{\"hello\":“Well mudda sick!”}",
+    "FlagImg": "https://cdn.countryflags.com/thumbs/bahamas/flag-800.png",
+    "Currency": "Bahamian dollar (BSD)",
+    "MainAirportName": "Lynden Pindling International Airport",
+    "IATACode": "LPIA",
+    "DrivingSide": "Left",
+    "TimeZone": "UTC−5 (EST)"
+  },
+  {
+    "Country": "NewZealand",
+    "Demonym(s)": [
+      "New Zealander",
+      "Kiwi"
+    ],
+    "CapitalCity": "Wellington",
+    "HelloNativeLanguages": [
+      "{lang:“Te Reo Māori”}",
+      "{hello: “Kia ora!”}"
+    ],
+    "FlagImg": "https://cdn.countryflags.com/thumbs/new-zealand/flag-800.png",
+    "Currency": "New Zealand dollar ($) (NZD)",
+    "MainAirportName": "Auckland Airport",
+    "IATACode": "AKL",
+    "DrivingSide": "Left",
+    "TimeZone": "UTC+12 (NZST[n 5])"
+  },
+  {
+    "Country": "SriLanka",
+    "Demonym(s)": "Sri Lankan",
+    "CapitalCity": "Colombo",
+    "HelloNativeLanguages": [
+      "{lang:“Tamil”}",
+      "{hello: “வணக்கம் - Vaṇakkam”}",
+      "{lang: Sinhala }",
+      "{hello:  ආයුබෝවන්- āyubōvan }"
+    ],
+    "FlagImg": "https://www.countryflags.com/wp-content/uploads/sri-lanka-flag-png-large.png",
+    "Currency": "Sri Lankan rupee (Rs) (LKR)",
+    "MainAirportName": "Bandaranaike International Colombo Airport",
+    "IATACode": "CMB",
+    "DrivingSide": "Left",
+    "TimeZone": "UTC+5:30 (SLST)"
+  },
+  {
+    "Country": "IceLand",
+    "Demonym(s)": [
+      "Icelander",
+      "Icelandic"
+    ],
+    "CapitalCity": "Reykjavík",
+    "HelloNativeLanguages": [
+      "{lang:“Icelandic”}",
+      "{hello:“Halló!”}"
+    ],
+    "FlagImg": "https://cdn.countryflags.com/thumbs/iceland/flag-800.png",
+    "Currency": "Icelandic króna (ISK)",
+    "MainAirportName": "Keflavík International Airport",
+    "IATACode": "KEF",
+    "DrivingSide": "Right",
+    "TimeZone": "UTC[c] (GMT/WET)"
+  },
+  {
+    "Country": "Japan",
+    "Demonym(s)": "Japanese",
+    "CapitalCity": "Tokyo",
+    "HelloNativeLanguages": [
+      "{lang:“Japanese”}",
+      "{hello: “こんにちは - Kon’nichiwa”}"
+    ],
+    "FlagImg": "https://cdn.countryflags.com/thumbs/japan/flag-800.png",
+    "Currency": "Japanese yen (¥)",
+    "MainAirportName": "Narita International Airport",
+    "IATACode": "NRT",
+    "DrivingSide": "Left",
+    "TimeZone": "UTC+09:00 (JST)"
+  }
+]

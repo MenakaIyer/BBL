@@ -1,0 +1,9 @@
+Destinations:
+Country:,Demonym(s):,CapitalCity :,HelloNativeLanguages:,FlagImg:,Currency:,MainAirportName:,IATACode: ,DrivingSide:,TimeZone:
+“Aruba”,“Aruban”,“Oranjestad”,"[Papiamento: Bon dia, Dutch:Hallo]",https://www.countryflags.com/wp-content/uploads/aruba-flag-jpg-xl.jpg,Aruban florin (AWG),Queen Beatrix International Airport,AUA,Right,UTC-4:00 (AST)
+SriLanka,“Sri Lankan”,“Colombo”,"[Tamil: வணக்கம் - Vaṇakkam, Sinhala: ආයුබෝවන්- āyubōvan]",https://www.countryflags.com/wp-content/uploads/sri-lanka-flag-png-large.png,Sri Lankan rupee (Rs) (LKR),Bandaranaike International Colombo Airport,CMB,Left,UTC+5:30 (SLST)
+Bahamas,“Bahamian”,“Nassau”,"[English: “Well mudda sick!”
+]",https://cdn.countryflags.com/thumbs/bahamas/flag-800.png,Bahamian dollar (BSD),Lynden Pindling International Airport,LPIA,Left,UTC−5 (EST)
+NewZealand,"[“New Zealander, Kiwi”]","“Wellington""",[Te Reo Māori: “Kia ora!”],https://cdn.countryflags.com/thumbs/new-zealand/flag-800.png,New Zealand dollar ($) (NZD),Auckland Airport,AKL,Left,UTC+12 (NZST[n 5])
+IceLand,"[“Icelander, Icelandic”]","“Reykjavík""",[Icelandic: “Halló!”],https://cdn.countryflags.com/thumbs/iceland/flag-800.png,Icelandic króna (ISK),Keflavík International Airport,KEF,Right,UTC[c] (GMT/WET)
+Japan,“Japanese”,“Tokyo”,[Japanese: “こんにちは - Kon’nichiwa”],https://cdn.countryflags.com/thumbs/japan/flag-800.png,Japanese yen (¥),Narita International Airport ,NRT,Left,UTC+09:00 (JST)
