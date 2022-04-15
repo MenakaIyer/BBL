@@ -2,35 +2,32 @@ import React from "react";
 import styled from "styled-components";
 import { useContext } from "react";
 import { DestinationContext } from "../Context/DestinationContext";
-
-
-
-
-
-const BoredingPass = ({ destinationArray,
-  status}) => {
-// const {
-//   destinationArray,
-//   status,
-// }= useContext(DestinationContext);
-// const {
-//   Country,
-//   Demonym(s),
-//   CapitalCity,
-//   HelloNativeLanguages,
-//   FlagImg,
-//   Currency,
-//   MainAirportName,
-//   IATACode,
-//   DrivingSide,
-//   TimeZone,
-// } = destination;
-
+import DestinationButton from "./destinationbutton";
+import DestinationGrid from "./destinationGrid";
+const BoredingPass = ({ destinationArray, status }) => {
+  // const {
+  //   destinationArray,
+  //   status,
+  // }= useContext(DestinationContext);
+  // const {
+  //   Country,
+  //   Demonym(s),
+  //   CapitalCity,
+  //   HelloNativeLanguages,
+  //   FlagImg,
+  //   Currency,
+  //   MainAirportName,
+  //   IATACode,
+  //   DrivingSide,
+  //   TimeZone,
+  // } = destination;
 
   return (
     <Header>
       <T>ANTi-BoredingPass</T>
-
+      <>
+        <DestinationGrid />
+      </>
     </Header>
   );
 };
@@ -56,5 +53,4 @@ const T = styled.h1`
   color: orange;
   text-shadow: -1px -1px 0 #fffaab, 1px -1px 0 #fffaab, -1px 1px 0 #000,
     1px 1px 0 #000;
-
 `;
