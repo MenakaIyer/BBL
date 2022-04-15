@@ -4,7 +4,7 @@
   "description": "Beta Bucket Lis",
   "main": "index.js",
   "scripts": {
-    "start": "node server.js",
+    "start": "nodemon server.js",
     "dev:server": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

@@ -1,10 +1,36 @@
 import React from "react";
 import styled from "styled-components";
+import { useContext } from "react";
+import { DestinationContext } from "../Context/DestinationContext";
 
-const BoredingPass = () => {
+
+
+
+
+const BoredingPass = ({ destinationArray,
+  status}) => {
+// const {
+//   destinationArray,
+//   status,
+// }= useContext(DestinationContext);
+// const {
+//   Country,
+//   Demonym(s),
+//   CapitalCity,
+//   HelloNativeLanguages,
+//   FlagImg,
+//   Currency,
+//   MainAirportName,
+//   IATACode,
+//   DrivingSide,
+//   TimeZone,
+// } = destination;
+
+
   return (
     <Header>
       <T>ANTi-BoredingPass</T>
+
     </Header>
   );
 };
@@ -21,8 +47,8 @@ const Header = styled.header`
 `;
 
 const T = styled.h1`
+  margin: auto;
   text-align: right;
-
   font-weight: 400;
   font-size: 62px;
   line-height: 35px;
@@ -30,4 +56,5 @@ const T = styled.h1`
   color: orange;
   text-shadow: -1px -1px 0 #fffaab, 1px -1px 0 #fffaab, -1px 1px 0 #000,
     1px 1px 0 #000;
+
 `;

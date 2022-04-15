@@ -6,11 +6,6 @@ import SignIn from "./Components/SignIn";
 import styled from "styled-components";
 import GlobalStyle from "./globalStyles";
 
-
-
-
-
-
 function App() {
   return (
     <Main>
