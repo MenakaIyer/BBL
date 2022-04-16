@@ -31,11 +31,13 @@ const getDestinations = async (req, res) => {
 };
 
 const getDestination = async (req, res) => {
-  const _id = req._id;
+  // const { country } = req.Country;
+  const { Aruba } = req.params;
+
   const client = new MongoClient(MONGO_URI, options);
   await client.connect();
   const db = client.db(DB_NAME);
-  let des = await db.collection("Destinations").find(_id).toArray();
+  let des = await db.collection("Destinations").findOne(Aruba);
   console.log(des, "Mew");
   client.close();
   if (!des) {
