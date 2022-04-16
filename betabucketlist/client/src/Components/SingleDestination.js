@@ -2,19 +2,19 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
 const SingleDestination = () => {
-  const { Country } = useParams();
+  const { country } = useParams();
   const [destination, setDestination] = useState({});
 
   useEffect(() => {
-    fetch(`/BBL/${Country}`)
+    fetch(`/BBL/${country}`)
       .then((res) => res.json())
       .then((json) => {
         console.log(json);
         setDestination(json.Country);
-        console.log(destination);
+        console.log(destination, "meew");
       });
   });
-  return <div>SingleDestination</div>;
+  return <div>{destination.Country}</div>;
 };
 
 export default SingleDestination;

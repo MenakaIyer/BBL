@@ -27,6 +27,8 @@
     "file-system": "^2.2.2",
     "mongodb": "^4.5.0",
     "path": "^0.12.7",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
     "react-router-dom": "^6.3.0",
     "uuid": "^8.3.2"
   }

@@ -16,7 +16,7 @@ function App() {
         <Routes>
           <Route path="/" element={<LandingPage />}></Route>
           <Route path="/BBL" element={<DestinationStation />}></Route>
-          <Route path="/BBL/:Country" element={<SingleDestination />}></Route>
+          <Route path="/BBL/Aruba" element={<SingleDestination />}></Route>
         </Routes>
       </BrowserRouter>
     </Main>

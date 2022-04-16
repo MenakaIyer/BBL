@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import DestinationHeader from "./destinationGrid";
+import DestinationHeader from "./destinationHeader";
 const BoredingPass = () => {
   return (
     <Header>
