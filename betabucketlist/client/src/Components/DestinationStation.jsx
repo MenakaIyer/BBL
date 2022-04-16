@@ -11,20 +11,25 @@ const DestinationStation = () => {
       .then((res) => res.json())
 
       .then((data) => {
-        console.log(data);
+        console.log(data, "DS");
         setDestinations(data);
         setLoaded(true);
       });
   }, []);
 
-  const arrayDes = destinations?.destinationArray;
+  const arrayDes = destinations?.data
 
   return (
     <div>
       DestinationStation
       {loaded ? (
-        arrayDes.map((key) => {
-          return key.Country;
+        arrayDes?.map((destination) => {
+          return (
+            <div key={destination._id}>
+              {" "}
+              <p>{destination.Country}</p>
+            </div>
+          );
         })
       ) : (
         <Loading src="https://media4.giphy.com/media/AAO7CYEKrIGfGphpFO/200.gif" />

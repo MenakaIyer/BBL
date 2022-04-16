@@ -30,4 +30,7 @@ const getDestinations = async (req, res) => {
   }
 };
 
+
+
+
 module.exports = { getDestinations };

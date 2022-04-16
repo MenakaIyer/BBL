@@ -1,10 +1,12 @@
 import React from "react";
 import { Routes, BrowserRouter, Route } from "react-router-dom";
 import BoredingPass from "./Components/BoredingPass";
+import DestinationStation from "./Components/DestinationStation";
 import LandingPage from "./Components/LandingPage";
 import SignIn from "./Components/SignIn";
 import styled from "styled-components";
-import GlobalStyle from "./globalStyles";
+// import GlobalStyle from "./globalStyles";
+// import SingleDestination from "./Components/SingleDestination";
 
 function App() {
   return (
@@ -13,7 +15,8 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<LandingPage />}></Route>
-          <Route path="/BBL" element={<SignIn />}></Route>
+          <Route path="/BBL" element={<DestinationStation />}></Route>
+          {/* <Route path="/BBL/:Country" element={<SingleDestination />}></Route> */}
         </Routes>
       </BrowserRouter>
     </Main>

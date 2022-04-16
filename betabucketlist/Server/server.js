@@ -5,14 +5,12 @@ const path = require("path");
 const PORT = 6369;
 console.log("Mo money ");
 
-const { getDestinations } = require("./src/handlers/handler");
+const { getDestinations, getDestination } = require("./src/handlers/handler");
 
 const app = express();
 
 app.get("/destinations", getDestinations);
-
-// applying handler for API
-// app.use("/", router);
+// app.get("/BBL/:Country", getDestination);
 
 // Serving app on PORT we defined
 app.listen(PORT, () => {

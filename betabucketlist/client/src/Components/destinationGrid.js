@@ -3,20 +3,26 @@ import { DestinationContext } from "../Context/DestinationContext";
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 
-const DestinationGrid = () => {
+const DestinationHeader = () => {
   const { destinationArray } = useContext(DestinationContext);
 
   return (
-    <div>
+    <Holder>
       {destinationArray.map((destination) => {
         return <Lenko key={destination._id}> {destination.Country}</Lenko>;
       })}
-    </div>
+    </Holder>
   );
 };
 
-const Lenko = styled.div`
-  width: 100px;
+const Holder = styled.div`
+  display: flex;
+  gap: 65px;
+  margin: auto;
+  padding: 15px;
+`;
+const Lenko = styled.h4`
+  text-align: center;
 `;
 
-export default DestinationGrid;
+export default DestinationHeader;
