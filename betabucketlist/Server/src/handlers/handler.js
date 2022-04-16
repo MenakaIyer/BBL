@@ -36,8 +36,6 @@ const getDestination = async (req, res) => {
   console.log(id, "Paramsid");
   const _id = ObjectId(id);
 
-  console.log(ObjectId, "objid???");
-
   const client = new MongoClient(MONGO_URI, options);
   await client.connect();
   const db = client.db(DB_NAME);
@@ -50,8 +48,8 @@ const getDestination = async (req, res) => {
       message: "NO DESTINATIONS FOR YOU FOOL!",
     });
   } else {
-    res.status(204).json({
-      status: 204,
+    res.status(200).json({
+      status: 200,
       data: des,
     });
   }
