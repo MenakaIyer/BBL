@@ -10,7 +10,7 @@ const { getDestinations, getDestination } = require("./src/handlers/handler");
 const app = express();
 
 app.get("/destinations", getDestinations);
-app.get("/BBL/:country", getDestination);
+app.get("/BBL/Aruba", getDestination);
 
 // Serving app on PORT we defined
 app.listen(PORT, () => {
