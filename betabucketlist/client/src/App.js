@@ -5,12 +5,13 @@ import DestinationStation from "./Components/DestinationStation";
 import LandingPage from "./Components/LandingPage";
 import SignIn from "./Components/SignIn";
 import styled from "styled-components";
-// import GlobalStyle from "./globalStyles";
+import GlobalStyle from "./globalStyles";
 import SingleDestination from "./Components/SingleDestination";
 
 function App() {
   return (
     <Main>
+      {/* <GlobalStyle/> */}
       <BoredingPass />
       <BrowserRouter>
         <Routes>
@@ -30,4 +31,5 @@ const Main = styled.div`
   margin: auto;
   display: flex;
   flex-direction: column;
+  gap: 25px;
 `;

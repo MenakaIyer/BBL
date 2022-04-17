@@ -1,19 +1,19 @@
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 
-const usePersistedState = (defaultValue, key) => {
-  const [state, setState] = useState(() => {
-    const persistedState = sessionStorage.getItem(key);
+// const usePersistedState = (defaultValue, key) => {
+//   const [state, setState] = useState(() => {
+//     const persistedState = sessionStorage.getItem(key);
 
-    return persistedState && defaultValue.length === 0
-      ? JSON.parse(persistedState)
-      : defaultValue;
-  });
+//     return persistedState && defaultValue.length === 0
+//       ? JSON.parse(persistedState)
+//       : defaultValue;
+//   });
 
-  useEffect(() => {
-    window.sessionStorage.setItem(key, JSON.stringify(state));
-  }, [key, state]);
+//   useEffect(() => {
+//     window.sessionStorage.setItem(key, JSON.stringify(state));
+//   }, [key, state]);
 
-  return [state, setState];
-};
+//   return [state, setState];
+// };
 
-export default usePersistedState;
+// export default usePersistedState;

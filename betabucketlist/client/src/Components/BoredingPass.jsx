@@ -13,7 +13,8 @@ const BoredingPass = () => {
         {destinationArray.map((destination) => {
           return (
             <Leggo key={destination._id}>
-              <Button onclick
+              <Button
+                onclick
                 path
                 to={`/BBL/${destination._id}`}
                 element={<SingleDestination />}
@@ -37,6 +38,8 @@ const Header = styled.header`
   flex-direction: column;
   mix-blend-mode: color-burn;
   box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+  width: 90%;
+  margin: auto;
 `;
 
 const T = styled.h1`
@@ -63,7 +66,7 @@ const Button = styled.button`
     -16px 16px #2196f3, -20px 20px #26c6da, -24px 24px #43a047,
     -28px 28px #eeff41, -32px 32px #f9a825, -36px 36px #ff5722;
   cursor: pointer;
-  font-size: 45px;
+  font-size: 25px;
 `;
 
 const Leggo = styled.div`

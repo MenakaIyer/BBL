@@ -29,9 +29,9 @@ const DestinationHeader = () => {
 
 const Holder = styled.div`
   display: flex;
-  gap: 65px;
+  gap: 10%;
   margin: auto;
-  padding: 35px;
+  padding: 15%;
 `;
 const Button = styled.button`
   text-align: center;

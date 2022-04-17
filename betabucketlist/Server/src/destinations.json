@@ -1,7 +1,7 @@
 [
   {
     "Country": "Aruba",
-    "Demonym(s)": "Aruban",
+    "Demonym": "Aruban",
     "CapitalCity": "Oranjestad",
     "HelloNativeLanguages": [
       "{ lang : \"Papiamento\"}",
@@ -18,7 +18,7 @@
   },
   {
     "Country": "Bahamas",
-    "Demonym(s)": "Bahamian",
+    "Demonym": "Bahamian",
     "CapitalCity": "Nassau",
     "HelloNativeLanguages": "{\"lang\":\"English”},{\"hello\":“Well mudda sick!”}",
     "FlagImg": "https://cdn.countryflags.com/thumbs/bahamas/flag-800.png",
@@ -30,15 +30,9 @@
   },
   {
     "Country": "NewZealand",
-    "Demonym(s)": [
-      "New Zealander",
-      "Kiwi"
-    ],
+    "Demonym": ["New Zealander", "Kiwi"],
     "CapitalCity": "Wellington",
-    "HelloNativeLanguages": [
-      "{lang:“Te Reo Māori”}",
-      "{hello: “Kia ora!”}"
-    ],
+    "HelloNativeLanguages": ["{lang:“Te Reo Māori”}", "{hello: “Kia ora!”}"],
     "FlagImg": "https://cdn.countryflags.com/thumbs/new-zealand/flag-800.png",
     "Currency": "New Zealand dollar ($) (NZD)",
     "MainAirportName": "Auckland Airport",
@@ -48,7 +42,7 @@
   },
   {
     "Country": "SriLanka",
-    "Demonym(s)": "Sri Lankan",
+    "Demonym": "Sri Lankan",
     "CapitalCity": "Colombo",
     "HelloNativeLanguages": [
       "{lang:“Tamil”}",
@@ -65,15 +59,9 @@
   },
   {
     "Country": "IceLand",
-    "Demonym(s)": [
-      "Icelander",
-      "Icelandic"
-    ],
+    "Demonym": ["Icelander", "Icelandic"],
     "CapitalCity": "Reykjavík",
-    "HelloNativeLanguages": [
-      "{lang:“Icelandic”}",
-      "{hello:“Halló!”}"
-    ],
+    "HelloNativeLanguages": ["{lang:“Icelandic”}", "{hello:“Halló!”}"],
     "FlagImg": "https://cdn.countryflags.com/thumbs/iceland/flag-800.png",
     "Currency": "Icelandic króna (ISK)",
     "MainAirportName": "Keflavík International Airport",
@@ -83,7 +71,7 @@
   },
   {
     "Country": "Japan",
-    "Demonym(s)": "Japanese",
+    "Demonym": "Japanese",
     "CapitalCity": "Tokyo",
     "HelloNativeLanguages": [
       "{lang:“Japanese”}",
