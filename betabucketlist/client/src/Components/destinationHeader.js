@@ -13,10 +13,10 @@ const DestinationHeader = () => {
           <Leggo key={destination._id}>
             <Routes>
               <>
-                <NLink to={`/BBL/${destination._id}`}>
-                  <Button>
+                <NLink to={`/BBL/62584447b91211c600b9fab6`}>
+                  <div>
                     <p> {destination.Country}</p>
-                  </Button>
+                  </div>
                 </NLink>
               </>
             </Routes>
@@ -48,5 +48,6 @@ const Leggo = styled.div`
 
 const NLink = styled(NavLink)`
   margin: auto;
+  height: 45px;
 `;
 export default DestinationHeader;

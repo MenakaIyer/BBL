@@ -1,29 +1,38 @@
 import React, { useContext } from "react";
 import styled from "styled-components";
 import { DestinationContext } from "../Context/DestinationContext";
-import { NavLink } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
 import SingleDestination from "./SingleDestination";
 
 const BoredingPass = () => {
   const { destinationArray } = useContext(DestinationContext);
+
+  // const HandleClick = () => {
+  //   const id = useParams();
+  //   window.location.href = `http://localhost:3000/BBL/${id}`;
+  // };
+
   return (
     <Header>
       <T>ANTi-BoredingPass</T>
       <Holder>
-        {destinationArray.map((destination) => {
-          return (
-            <Leggo key={destination._id}>
-              <Button
-                onclick
-                path
-                to={`/BBL/${destination._id}`}
-                element={<SingleDestination />}
-              >
-                <p> {destination.Country}</p>
-              </Button>
-            </Leggo>
-          );
-        })}
+        {destinationArray ? (
+          destinationArray?.map((destination) => {
+            return (
+              <Leggo key={destination._id}>
+                <Button
+                  onClick={() => {
+                    window.location.href = `http://localhost:3000/BBL/${destination._id}`;
+                  }}
+                >
+                  <p> {destination.Country}</p>
+                </Button>
+              </Leggo>
+            );
+          })
+        ) : (
+          <></>
+        )}
       </Holder>
     </Header>
   );
@@ -71,8 +80,4 @@ const Button = styled.button`
 
 const Leggo = styled.div`
   display: flex;
-`;
-
-const NLink = styled.div`
-  margin: auto;
 `;

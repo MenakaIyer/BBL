@@ -21,10 +21,10 @@ const SingleDestination = ({ destinationArray }) => {
     <>
       <Wrapper>
         <>
-          {destination.HelloNativeLanguages?.map((langi) => {
+          {/* {destination.HelloNativeLanguages?.map((langi) => {
             console.log(langi, "MOTH");
             return <h1 key={langi}>{langi}</h1>;
-          })}
+          })} */}
         </>
         <Flag src={destination.FlagImg} alt="Flag" />
         <h1>{destination.Country}</h1>
