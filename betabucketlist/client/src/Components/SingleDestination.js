@@ -10,13 +10,13 @@ const SingleDestination = ({ destinationArray }) => {
     fetch(`/BBL/${id.id}`)
       .then((res) => res.json())
       .then((json) => {
-        console.log(json,"JSAon");
+        console.log(json, "JSAon");
         setDestination(json.data);
         console.log(json.data, "SingID");
       });
   }, []);
-  console.log(destination,"dessttii");
-  return <div>MEw</div>;
+  console.log(destination, "dessttii");
+  return <div>{destination.Country}</div>;
 };
 
 export default SingleDestination;
