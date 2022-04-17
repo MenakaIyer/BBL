@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { DestinationContext } from "../Context/DestinationContext";
 import styled from "styled-components";
-import { NavLink } from "react-router-dom";
+import { Routes, Link, NavLink, Route } from "react-router-dom";
 
 const DestinationHeader = () => {
   const { destinationArray } = useContext(DestinationContext);
@@ -10,12 +10,17 @@ const DestinationHeader = () => {
     <Holder>
       {destinationArray.map((destination) => {
         return (
-          <div key={destination._id}>
-            {/* to={`/BBL/${destination._id}`} */}
-            <Lenko>
-              <p> {destination.Country}</p>
-            </Lenko>
-          </div>
+          <Leggo key={destination._id}>
+            <Routes>
+              <>
+                <NLink to={`/BBL/${destination._id}`}>
+                  <Button>
+                    <p> {destination.Country}</p>
+                  </Button>
+                </NLink>
+              </>
+            </Routes>
+          </Leggo>
         );
       })}
     </Holder>
@@ -28,7 +33,7 @@ const Holder = styled.div`
   margin: auto;
   padding: 35px;
 `;
-const Lenko = styled.button`
+const Button = styled.button`
   text-align: center;
   box-shadow: -4px 4px #ef3550, -8px 8px #f48fb1, -12px 12px #7e57c2,
     -16px 16px #2196f3, -20px 20px #26c6da, -24px 24px #43a047,
@@ -37,4 +42,11 @@ const Lenko = styled.button`
   font-size: 45px;
 `;
 
+const Leggo = styled.div`
+  display: flex;
+`;
+
+const NLink = styled(NavLink)`
+  margin: auto;
+`;
 export default DestinationHeader;
