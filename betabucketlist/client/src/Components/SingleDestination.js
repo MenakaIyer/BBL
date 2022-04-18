@@ -5,6 +5,7 @@ import styled from "styled-components";
 
 const SingleDestination = ({ destinationArray }) => {
   const [destination, setDestination] = useState({});
+  const [loaded, setLoaded] = useState(false);
   const id = useParams();
   console.log(id.id, "Idbb");
   useEffect(() => {
@@ -13,55 +14,72 @@ const SingleDestination = ({ destinationArray }) => {
       .then((json) => {
         console.log(json, "JSAon");
         setDestination(json.data);
+        setLoaded(true);
         console.log(json.data, "SingID");
       });
-  }, []);
+  }, [id]);
   console.log(destination, "dessttii");
-  return (
-    <>
-      <Wrapper>
-        <>
-          {/* {destination.HelloNativeLanguages?.map((langi) => {
-            console.log(langi, "MOTH");
-            return <h1 key={langi}>{langi}</h1>;
-          })} */}
-        </>
-        <Flag src={destination.FlagImg} alt="Flag" />
-        <h1>{destination.Country}</h1>
-        <h1> IATA Code: {destination.IATACode}</h1>
 
-        <h2>Demonym: {destination.Demonym}</h2>
-        <h2> Capital City🏛: {destination.CapitalCity} </h2>
-        <Currency>
-          {" "}
-          <h3>Currency💰:</h3> <h3>{destination.Currency}</h3>{" "}
-        </Currency>
+  if (!loaded) {
+    return <></>;
+  } else {
+    return (
+      <>
+        <Wrapper>
+          <Div />
+          <Wrap>
+            <Div>
+              <Flag src={destination?.FlagImg} alt="Flag" />
+              <h1>{destination.Country}</h1>
+              <h1> IATA Code: {destination.IATACode}</h1>
+              <h1> destination.MainAirportName</h1>
+              <h1>destination.TimeZone</h1>
 
-        <h4> Driving Side 🚗 🛣: {destination.DrivingSide}</h4>
-      </Wrapper>
-    </>
-  );
+              <h2>Demonym: {destination.Demonym}</h2>
+              <>
+                {destination.HelloLang?.map((hello) => {
+                  console.log(hello, "hello");
+                  return (
+                    <h6 key={hello}>
+                      <i>How to say hello!</i> <br></br> Language(s): {hello}
+                    </h6>
+                  );
+                })}
+              </>
+              <h2> Capital City🏛: {destination.CapitalCity} </h2>
+              <Currency>
+                {" "}
+                <h3>Currency💰:</h3> <h3>{destination.Currency}</h3>{" "}
+              </Currency>
+
+              <h4> Driving Side 🚗 🛣: {destination.DrivingSide}</h4>
+            </Div>
+          </Wrap>
+        </Wrapper>
+      </>
+    );
+  }
 };
 
 export default SingleDestination;
 
 const Wrapper = styled.div`
+  padding-top: 25px;
   display: flex;
-  flex-direction: column;
   width: 90%;
   margin-top: 25px;
-  display: flex;
-  gap: 15px;
   margin: auto;
   text-align: center;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  justify-content: right;
+  justify-content: space-between;
+  padding-bottom: 155px;
 `;
 
 const Flag = styled.img`
-  width: 15%;
+  width: 65%;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   align-self: center;
+  margin-top: 15px;
 `;
 
 const Currency = styled.div`
@@ -73,7 +91,22 @@ const Currency = styled.div`
 `;
 const Wrap = styled.div`
   display: flex;
-  justify-items: right;
+  flex-direction: column;
   gap: 5px;
   padding: 15px;
+  width: 30%;
+  margin: auto;
+  box-shadow: -4px 4px #ef3550, -8px 8px #f48fb1, -12px 12px #7e57c2,
+    -16px 16px #2196f3, -20px 20px #26c6da, -24px 24px #43a047,
+    -28px 28px #eeff41, -32px 32px #f9a825, -36px 36px #ff5722;
+  background-image: url("https://media2.giphy.com/media/VF59XWerSOv87ZZagn/200.gif");
+  background-repeat: round space;
+  padding-bottom: 55px;
+`;
+
+const Div = styled.div`
+  background: white;
+  opacity: 0.8;
+  width: 60%;
+  margin: auto;
 `;

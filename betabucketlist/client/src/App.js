@@ -13,7 +13,6 @@ function App() {
     <Main>
       {/* <GlobalStyle/> */}
       <BoredingPass />
-      <SignIn />
       <BrowserRouter>
         <Switch>
           <Route path="/BBL/:id">
