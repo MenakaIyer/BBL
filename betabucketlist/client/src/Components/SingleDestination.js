@@ -31,18 +31,21 @@ const SingleDestination = ({ destinationArray }) => {
             <Div>
               <Flag src={destination?.FlagImg} alt="Flag" />
               <h1>{destination.Country}</h1>
-              <h1> IATA Code: {destination.IATACode}</h1>
-              <h1> destination.MainAirportName</h1>
-              <h1>destination.TimeZone</h1>
-
-              <h2>Demonym: {destination.Demonym}</h2>
+              <h3> IATA Code: {destination.IATACode}</h3>
+              <h3> {destination.MainAirportName}</h3>
+              <h3>
+                <i>Time zone:</i>
+              </h3>
+              {destination.TimeZone}
+              <h3>Demonym:</h3>
+              {destination.Demonym}
               <>
                 {destination.HelloLang?.map((hello) => {
                   console.log(hello, "hello");
                   return (
-                    <h6 key={hello}>
-                      <i>How to say hello!</i> <br></br> Language(s): {hello}
-                    </h6>
+                    <h4 key={hello}>
+                      <i>How to say hello!</i> <br></br> {hello}
+                    </h4>
                   );
                 })}
               </>
