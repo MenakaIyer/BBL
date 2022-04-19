@@ -27,7 +27,9 @@ const HomeAway = ({ flag, id }) => {
   } else {
     return (
       <Wrapper>
-img av tag <p> msg.author </p>
+          
+{/* img av tag <p> msg.author </p> */}
+
         {messages.map((msg) => {
           console.log(msg, "messssssagggemap");
           return (
