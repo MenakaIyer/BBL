@@ -11,7 +11,7 @@ import SingleDestination from "./Components/SingleDestination";
 function App() {
   return (
     <Main>
-      {/* <GlobalStyle/> */}
+      <GlobalStyle />
       <BoredingPass />
       <BrowserRouter>
         <Switch>

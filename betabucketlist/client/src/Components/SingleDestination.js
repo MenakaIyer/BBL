@@ -29,17 +29,30 @@ const SingleDestination = ({ destinationArray }) => {
           <Div />
           <Wrap>
             <Div>
-              <Flag src={destination?.FlagImg} alt="Flag" />
-              <h1>{destination.Country}</h1>
-              <h3> IATA Code: {destination.IATACode}</h3>
-              <h3> {destination.MainAirportName}</h3>
-              <h3>
-                <i>Time zone:</i>
-              </h3>
-              {destination.TimeZone}
-              <h3>Demonym:</h3>
-              {destination.Demonym}
-              <>
+              <D>
+                <Flag src={destination?.FlagImg} alt="Flag" />
+              </D>
+              <D>
+                <h1>{destination.Country}</h1>
+              </D>
+              <D>
+                <h3> IATA Code: {destination.IATACode}</h3>
+              </D>
+              <D>
+                <h3> {destination.MainAirportName}</h3>
+              </D>
+              <D>
+                {" "}
+                <h3>
+                  <i>Time zone:</i>
+                </h3>
+                {destination.TimeZone}
+              </D>
+              <D>
+                <h3>Demonym:</h3>
+                {destination.Demonym}
+              </D>
+              <D>
                 {destination.HelloLang?.map((hello) => {
                   console.log(hello, "hello");
                   return (
@@ -48,14 +61,19 @@ const SingleDestination = ({ destinationArray }) => {
                     </h4>
                   );
                 })}
-              </>
-              <h2> Capital City🏛: {destination.CapitalCity} </h2>
+              </D>
+              <D>
+                {" "}
+                <h2> Capital City🏛: {destination.CapitalCity} </h2>
+              </D>
               <Currency>
                 {" "}
                 <h3>Currency💰:</h3> <h3>{destination.Currency}</h3>{" "}
               </Currency>
 
-              <h4> Driving Side 🚗 🛣: {destination.DrivingSide}</h4>
+              <D>
+                <h4> Driving Side 🚗 🛣: {destination.DrivingSide}</h4>
+              </D>
             </Div>
           </Wrap>
         </Wrapper>
@@ -88,15 +106,16 @@ const Flag = styled.img`
 const Currency = styled.div`
   padding: 15px;
   gap: 15px;
-  color: green;
+  color: white;
+  background-color: green;
   margin: auto;
   box-shadow: rgba(88, 235, 52, 0.35) 0px 5px 15px;
 `;
 const Wrap = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 5px;
-  padding: 15px;
+  gap: 15px;
+  padding: 55px;
   width: 30%;
   margin: auto;
   box-shadow: -4px 4px #ef3550, -8px 8px #f48fb1, -12px 12px #7e57c2,
@@ -108,8 +127,19 @@ const Wrap = styled.div`
 `;
 
 const Div = styled.div`
-  background: white;
-  opacity: 0.8;
+  opacity: 0.9;
   width: 60%;
   margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+`;
+
+const D = styled.div`
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  z-index: 100;
+  height: 10%;
+  padding-bottom: 1.5%;
+  padding-top: 0.5%;
 `;
