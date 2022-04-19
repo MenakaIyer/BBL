@@ -7,12 +7,14 @@ import SignIn from "./Components/SignIn";
 import styled from "styled-components";
 import GlobalStyle from "./globalStyles";
 import SingleDestination from "./Components/SingleDestination";
+import ImageUpload from "./Components/ImageUpload";
 
 function App() {
   return (
     <Main>
       <GlobalStyle />
       <BoredingPass />
+      <ImageUpload />
       <BrowserRouter>
         <Switch>
           <Route path="/BBL/:id">
