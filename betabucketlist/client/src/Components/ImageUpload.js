@@ -1,8 +1,28 @@
 import React, { useState } from "react";
+import styled from "styled-components";
 
 const ImageUpload = () => {
   const [loading, setLoading] = useState(false);
-  const [image, setImage] = useState(" ");
+  const [newMessage, setNewMessage] = useState();
+  const [image, setImage] = useState("");
+
+  const handleNewMessage = (ev) => {
+    setNewMessage(ev.target.value);
+    ev.preventDefault();
+  };
+
+  const postMessage = () => {
+    fetch("/newmessages", {
+      body: JSON.stringify({ status: newMessage }),
+      headers: { "Content-Type": "application/json" },
+    })
+      .then((res) => res.json)
+      .then((data) => {
+        console.log(data);
+        setNewMessage("");
+      })
+      .catch((err) => console.log(err));
+  };
 
   const uploadImage = async (e) => {
     const files = e.target.files;
@@ -19,7 +39,7 @@ const ImageUpload = () => {
       }
     );
     const file = await res.json();
-    console.log(file);
+    console.log(file.secure_url);
     setImage(file.secure_url);
     setLoading(false);
   };
@@ -27,7 +47,17 @@ const ImageUpload = () => {
   return (
     <div>
       <h1 className="upload">Upload image</h1>
-      <input type="file" placeholder="Upload" onChange={uploadImage} />
+      <form>
+        <TextArea
+          placeholder="BucketLIST"
+          onChange={(ev) => {
+            handleNewMessage(ev);
+          }}
+          value={newMessage}
+        ></TextArea>
+        <Button onClick={postMessage} />
+        <input type="file" placeholder="Upload" onChange={uploadImage} />
+      </form>
       {loading ? (
         <h3>Loading...</h3>
       ) : (
@@ -37,4 +67,17 @@ const ImageUpload = () => {
   );
 };
 
+const TextArea = styled.textarea`
+  width: 600px;
+  height: 150px;
+  border: none;
+  padding: 10px;
+  resize: none;
+  background-color: rebeccapurple;
+`;
+
+const Button = styled.button`
+  width: 50px;
+  padding: 15px;
+`;
 export default ImageUpload;

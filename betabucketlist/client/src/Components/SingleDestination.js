@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import { useParams } from "react-router-dom";
 import { DestinationContext } from "../Context/DestinationContext";
 import styled from "styled-components";
+import HomeAway from "./HomeAway";
 
 const SingleDestination = ({ destinationArray }) => {
   const [destination, setDestination] = useState({});
@@ -24,60 +25,58 @@ const SingleDestination = ({ destinationArray }) => {
     return <></>;
   } else {
     return (
-      <>
-        <Wrapper>
-          <Div />
-          <Wrap>
-            <Div>
-              <D>
-                <Flag src={destination?.FlagImg} alt="Flag" />
-              </D>
-              <D>
-                <h1>{destination.Country}</h1>
-              </D>
-              <D>
-                <h3> IATA Code: {destination.IATACode}</h3>
-              </D>
-              <D>
-                <h3> {destination.MainAirportName}</h3>
-              </D>
-              <D>
-                {" "}
-                <h3>
-                  <i>Time zone:</i>
-                </h3>
-                {destination.TimeZone}
-              </D>
-              <D>
-                <h3>Demonym:</h3>
-                {destination.Demonym}
-              </D>
-              <D>
-                {destination.HelloLang?.map((hello) => {
-                  console.log(hello, "hello");
-                  return (
-                    <h4 key={hello}>
-                      <i>How to say hello!</i> <br></br> {hello}
-                    </h4>
-                  );
-                })}
-              </D>
-              <D>
-                {" "}
-                <h2> Capital City🏛: {destination.CapitalCity} </h2>
-              </D>
-              <Currency>
-                {" "}
-                <h3>Currency💰:</h3> <h3>{destination.Currency}</h3>{" "}
-              </Currency>
+      <Wrapper>
+        <HomeAway/>
+        <Wrap>
+          <Div>
+            <D>
+              <Flag src={destination?.FlagImg} alt="Flag" />
+            </D>
+            <D>
+              <h1>{destination.Country}</h1>
+            </D>
+            <D>
+              <h3> IATA Code: {destination.IATACode}</h3>
+            </D>
+            <D>
+              <h3> {destination.MainAirportName}</h3>
+            </D>
+            <D>
+              {" "}
+              <h3>
+                <i>Time zone:</i>
+              </h3>
+              {destination.TimeZone}
+            </D>
+            <D>
+              <h3>Demonym:</h3>
+              {destination.Demonym}
+            </D>
+            <D>
+              {destination.HelloLang?.map((hello) => {
+                console.log(hello, "hello");
+                return (
+                  <h4 key={hello}>
+                    <i>How to say hello!</i> <br></br> {hello}
+                  </h4>
+                );
+              })}
+            </D>
+            <D>
+              {" "}
+              <h2> Capital City🏛: {destination.CapitalCity} </h2>
+            </D>
+            <Currency>
+              {" "}
+              <h3>Currency💰:</h3> <h3>{destination.Currency}</h3>{" "}
+            </Currency>
 
-              <D>
-                <h4> Driving Side 🚗 🛣: {destination.DrivingSide}</h4>
-              </D>
-            </Div>
-          </Wrap>
-        </Wrapper>
-      </>
+            <D>
+              <h4> Driving Side 🚗 🛣: {destination.DrivingSide}</h4>
+            </D>
+          </Div>
+        </Wrap>
+      </Wrapper>
     );
   }
 };
