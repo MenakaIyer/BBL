@@ -55,55 +55,55 @@ const getDestination = async (req, res) => {
   }
 };
 
-// const newMessage = async (req, res) => {
-//   const client = new MongoClient(MONGO_URI, options);
-//   await client.connect();
-//   const db = client.db(DB_NAME);
-//   let msgs = await db.collection("messages").find().toArray();
-//   console.log(msgs, "msgs");
-//   client.close();
+const nMessage = async (req, res) => {
+  const client = new MongoClient(MONGO_URI, options);
+  await client.connect();
+  const db = client.db(DB_NAME);
+  // const { newMessage, image } = req.body;
+  // console.log(req.body, "*******");
+  // const messageObj = {
+  //   newMessage,
+  //   image,
+  //   timeStamp,
+  //};
+  let msgs = await db.collection("messages").insertOne(req.body);
+  console.log(msgs, "msgs");
+  client.close();
 
-//   if (!msgs) {
-//     res.status(404).json({
-//       message: "NO DESTINATIONS FOR YOU FOOL!",
-//     });
-//   } else {
-//     res.status(200).json({
-//       status: 200,
-//       data: msgs,
-//     });
-//   }
-// };
-// const addEmployee = async (req, res) => {
-//   const client = new MongoClient(MONGO_URI, options);
-//   const db = client.db("employee_1");
-//   const { employeeID, firstName, lastName, address, phone, title } = req.body; //
-//   // const id = uuidv4();
+  if (!msgs) {
+    res.status(404).json({
+      message: "NO DESTINATIONS FOR YOU FOOL!",
+    });
+  } else {
+    res.status(200).json({
+      status: 200,
+      data: msgs,
+    });
+  }
 
-//   const employee = {
-//     // _id: id,
-//     employeeID,
-//     firstName,
-//     lastName,
-//     phone,
-//     address,
-//     title,
-//   };
-//   try {
-//     await client.connect();
-//     const result = await db.collection("employee").insertOne(employee);
-//     res.status(200).json({
-//       message: "Employee added successfully",
-//       result,
-//     });
-//   } catch (error) {
-//     res.status(500).json({
-//       message: "Error adding employee",
-//       error,
-//     });
-//   }
-//   client.close();
-// };
+  client.close();
+};
+
+const getMessagesById = async (req, res) => {
+  const { id } = req.params;
+  const client = new MongoClient(MONGO_URI, options);
+  await client.connect();
+  const db = client.db(DB_NAME);
+  let msgs = await db.collection("messages").find({ id }).toArray();
+  console.log(msgs, "msgs");
+  client.close();
+
+  if (!msgs) {
+    res.status(404).json({
+      message: "NO MOMO!",
+    });
+  } else {
+    res.status(200).json({
+      status: 200,
+      data: msgs,
+    });
+  }
+};
 
 const getMessages = async (req, res) => {
   const client = new MongoClient(MONGO_URI, options);
@@ -125,4 +125,31 @@ const getMessages = async (req, res) => {
   }
 };
 
-module.exports = { getDestinations, getDestination, getMessages };
+const getUsers = async (req, res) => {
+  const client = new MongoClient(MONGO_URI, options);
+  await client.connect();
+  const db = client.db(DB_NAME);
+  let usersList = await db.collection("users").find().toArray();
+  console.log(usersList, "usersList");
+  client.close();
+
+  if (!usersList) {
+    res.status(404).json({
+      message: "NO DESTINATIONS FOR YOU FOOL!",
+    });
+  } else {
+    res.status(200).json({
+      status: 200,
+      data: usersList,
+    });
+  }
+};
+
+module.exports = {
+  getMessagesById,
+  getDestinations,
+  getDestination,
+  getMessages,
+  nMessage,
+  getUsers,
+};

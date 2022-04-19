@@ -3,14 +3,16 @@ import { useParams } from "react-router-dom";
 import { DestinationContext } from "../Context/DestinationContext";
 import styled from "styled-components";
 import HomeAway from "./HomeAway";
+import ImageUpload from "./ImageUpload";
 
 const SingleDestination = ({ destinationArray }) => {
   const [destination, setDestination] = useState({});
   const [loaded, setLoaded] = useState(false);
-  const id = useParams();
-  console.log(id.id, "Idbb");
+  const [flag, setFlag] = useState(false);
+  const { id } = useParams();
+  console.log(id, "Idbb");
   useEffect(() => {
-    fetch(`/BBL/${id.id}`)
+    fetch(`/BBL/${id}`)
       .then((res) => res.json())
       .then((json) => {
         console.log(json, "JSAon");
@@ -26,7 +28,10 @@ const SingleDestination = ({ destinationArray }) => {
   } else {
     return (
       <Wrapper>
-        <HomeAway/>
+        <Siv>
+          <ImageUpload setFlag={setFlag} flag={flag} id={id} />
+          <HomeAway flag={flag} id={id} />
+        </Siv>
         <Wrap>
           <Div>
             <D>
@@ -127,7 +132,6 @@ const Wrap = styled.div`
 
 const Div = styled.div`
   opacity: 0.9;
-  width: 60%;
   margin: auto;
   display: flex;
   flex-direction: column;
@@ -141,4 +145,9 @@ const D = styled.div`
   height: 10%;
   padding-bottom: 1.5%;
   padding-top: 0.5%;
+`;
+
+const Siv = styled.div`
+  flex-direction: column;
+  display: flex;
 `;

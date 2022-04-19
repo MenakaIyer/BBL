@@ -1,25 +1,30 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 
-const ImageUpload = () => {
+const ImageUpload = ({ setFlag, flag, id }) => {
   const [loading, setLoading] = useState(false);
   const [newMessage, setNewMessage] = useState();
   const [image, setImage] = useState("");
 
   const handleNewMessage = (ev) => {
     setNewMessage(ev.target.value);
-    ev.preventDefault();
   };
 
-  const postMessage = () => {
-    fetch("/newmessages", {
-      body: JSON.stringify({ status: newMessage }),
+  const handleSubmit = (ev) => {
+    ev.preventDefault();
+    const timeStamp = new Date();
+
+    fetch("/new-messages", {
+      method: "POST",
+      body: JSON.stringify({ newMessage, image, timeStamp, id }),
       headers: { "Content-Type": "application/json" },
     })
       .then((res) => res.json)
       .then((data) => {
-        console.log(data);
+        console.log(data, "Pix");
         setNewMessage("");
+        setImage("");
+        setFlag(!flag);
       })
       .catch((err) => console.log(err));
   };
@@ -39,7 +44,7 @@ const ImageUpload = () => {
       }
     );
     const file = await res.json();
-    console.log(file.secure_url);
+    console.log(file.secure_url, "pic");
     setImage(file.secure_url);
     setLoading(false);
   };
@@ -47,7 +52,7 @@ const ImageUpload = () => {
   return (
     <div>
       <h1 className="upload">Upload image</h1>
-      <form>
+      <form onSubmit={handleSubmit}>
         <TextArea
           placeholder="BucketLIST"
           onChange={(ev) => {
@@ -55,7 +60,7 @@ const ImageUpload = () => {
           }}
           value={newMessage}
         ></TextArea>
-        <Button onClick={postMessage} />
+        <Button> Post! </Button>
         <input type="file" placeholder="Upload" onChange={uploadImage} />
       </form>
       {loading ? (
@@ -74,10 +79,13 @@ const TextArea = styled.textarea`
   padding: 10px;
   resize: none;
   background-color: rebeccapurple;
+  opacity: 0.8;
 `;
 
 const Button = styled.button`
-  width: 50px;
   padding: 15px;
+  text-align: center;
+  display: flex;
+  align-self: center;
 `;
 export default ImageUpload;

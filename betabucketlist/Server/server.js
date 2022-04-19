@@ -9,14 +9,20 @@ const {
   getDestinations,
   getDestination,
   getMessages,
+  nMessage,
+  getMessagesById,
+  getUsers,
 } = require("./src/handlers/handler");
 
 const app = express();
+app.use(express.json());
 
 app.get("/destinations", getDestinations);
-// app.post("/newmessages")
+app.post("/new-messages", nMessage);
 app.get("/BBL/:id", getDestination);
-app.get("/getmessages", getMessages);
+app.get("/get-messages", getMessages);
+app.get("/get-messages/:id", getMessagesById);
+app.get("/getUsers", getUsers);
 // Serving app on PORT we defined
 app.listen(PORT, () => {
   console.log(`Express is running on port ${PORT}`);

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Switch, BrowserRouter, Route } from "react-router-dom";
 import BoredingPass from "./Components/BoredingPass";
 import DestinationStation from "./Components/DestinationStation";
@@ -8,18 +8,48 @@ import styled from "styled-components";
 import GlobalStyle from "./globalStyles";
 import SingleDestination from "./Components/SingleDestination";
 import ImageUpload from "./Components/ImageUpload";
+
 function App() {
+  const [allUsers, setAllUsers] = useState([]);
+  // const [linkDisabled, setLinkDisabled] = useState(false);
+  const [loggedInUser, setLoggedInUser] = useState("");
+  const [userFriends, setUserFriends] = useState([]);
+  const [currentUser, setCurrentUser] = useState([]);
+
+  useEffect(() => {
+    fetch("/getUsers").then((response) =>
+      response.json().then((json) => {
+        setAllUsers(json.data);
+        console.log(json.data, "USERSSSS");
+      })
+    );
+  }, []);
+
   return (
     <Main>
       <GlobalStyle />
-      <BoredingPass />
+      <BoredingPass
+        loggedInUser={loggedInUser}
+        setLoggedInUser={setLoggedInUser}
+        allUsers={allUsers}
+        userFriends={userFriends}
+        setUserFriends={setUserFriends}
+        currentUser={currentUser}
+        setCurrentUser={setCurrentUser}
+      />
       <Wrapper>
-        <ImageUpload />
+        {/* <ImageUpload /> */}
 
         <BrowserRouter>
           <Switch>
             <Route path="/BBL/:id">
-              <SingleDestination />
+              <SingleDestination
+                allUsers={allUsers}
+                userFriends={userFriends}
+                setUserFriends={setUserFriends}
+                currentUser={currentUser}
+                setCurrentUser={setCurrentUser}
+              />
             </Route>
           </Switch>
         </BrowserRouter>
