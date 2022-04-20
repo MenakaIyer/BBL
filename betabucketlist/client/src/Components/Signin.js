@@ -106,13 +106,16 @@ const Form = styled.form`
 `;
 
 const Background = styled.div`
-  width: 100vw;
+  width: 80vw;
   height: 100vh;
+  margin: auto;
   display: flex;
   justify-content: center;
   align-items: center;
   background-size: cover;
   background-repeat: no-repeat;
+  background-image: url("https://media1.giphy.com/media/3o72EZplI5RBdJU17q/200.gif");
+  // GIFLENS-https://media1.giphy.com/media/3o72EZplI5RBdJU17q/200.gif
 `;
 
 export default SignIn;

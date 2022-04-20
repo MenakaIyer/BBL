@@ -1,13 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import Loading from "./Loading";
 import styled from "styled-components";
-//import current user
+import { CurrentUserContext } from "../Context/CurrentUserContext";
 
-
+const moment = require("moment");
 
 const HomeAway = ({ flag, id }) => {
   const [messages, setMessages] = useState([]);
   const [loaded, setLoaded] = useState(false);
+  const { currentUserV1 } = useContext(CurrentUserContext);
 
   useEffect(() => {
     fetch(`/get-messages/${id}`)
@@ -27,17 +28,13 @@ const HomeAway = ({ flag, id }) => {
   } else {
     return (
       <Wrapper>
-          
-{/* img av tag <p> msg.author </p> */}
-
         {messages.map((msg) => {
           console.log(msg, "messssssagggemap");
           return (
             <Msg key={msg._id}>
-              <p>
-                {msg.newMessage}
-                {/* {msg.idauthor} */}
-              </p>
+              <p> {msg.newMessage} </p>
+              <p>{moment(msg.timeStamp).format("MMMM Do YYYY, h:mma ")}</p>
+              <p>{currentUserV1}</p>
               <Meowdia src={msg.image} />
             </Msg>
           );
@@ -48,16 +45,17 @@ const HomeAway = ({ flag, id }) => {
 };
 
 const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column-reverse;
   padding-top: 25px;
   text-align: center;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   justify-content: space-between;
+  gap: 15px;
 `;
 
 const Msg = styled.div`
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  margin: auto;
-  width: fit-content;
 `;
 
 const Meowdia = styled.img`

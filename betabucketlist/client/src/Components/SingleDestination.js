@@ -4,6 +4,7 @@ import { DestinationContext } from "../Context/DestinationContext";
 import styled from "styled-components";
 import HomeAway from "./HomeAway";
 import ImageUpload from "./ImageUpload";
+import Loading from "./Loading";
 
 const SingleDestination = ({ destinationArray }) => {
   const [destination, setDestination] = useState({});
@@ -24,7 +25,7 @@ const SingleDestination = ({ destinationArray }) => {
   console.log(destination, "dessttii");
 
   if (!loaded) {
-    return <></>;
+    return <Loading />;
   } else {
     return (
       <Wrapper>

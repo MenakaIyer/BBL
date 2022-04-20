@@ -1,19 +1,20 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import styled from "styled-components";
+import { CurrentUserContext } from "../Context/CurrentUserContext";
+const moment = require("moment");
 
 const ImageUpload = ({ setFlag, flag, id }) => {
+  const { currentUserV1, setCurrentUserV1 } = useContext(CurrentUserContext);
   const [loading, setLoading] = useState(false);
   const [newMessage, setNewMessage] = useState();
   const [image, setImage] = useState("");
-
+  const timeStamp = new Date();
   const handleNewMessage = (ev) => {
     setNewMessage(ev.target.value);
   };
 
   const handleSubmit = (ev) => {
     ev.preventDefault();
-    const timeStamp = new Date();
-
     fetch("/new-messages", {
       method: "POST",
       body: JSON.stringify({ newMessage, image, timeStamp, id }),
@@ -66,7 +67,9 @@ const ImageUpload = ({ setFlag, flag, id }) => {
       {loading ? (
         <h3>Loading...</h3>
       ) : (
-        <img src={image} style={{ width: `300px` }} alt={`uploaded`} />
+        <>
+          <img src={image} style={{ width: `300px` }} alt={`uploaded`} />
+        </>
       )}
     </div>
   );
@@ -78,8 +81,10 @@ const TextArea = styled.textarea`
   border: none;
   padding: 10px;
   resize: none;
-  background-color: rebeccapurple;
-  opacity: 0.8;
+  background-color: whitesmoke;
+  box-shadow: -4px 4px #ef3550, -8px 8px #f48fb1, -12px 12px #7e57c2,
+    -16px 16px #2196f3, -20px 20px #26c6da, -24px 24px #43a047,
+    -28px 28px #eeff41, -32px 32px #f9a825, -36px 36px #ff5722;
 `;
 
 const Button = styled.button`
@@ -87,5 +92,8 @@ const Button = styled.button`
   text-align: center;
   display: flex;
   align-self: center;
+  box-shadow: -4px 4px #ef3550, -8px 8px #f48fb1, -12px 12px #7e57c2,
+    -16px 16px #2196f3, -20px 20px #26c6da, -24px 24px #43a047,
+    -28px 28px #eeff41, -32px 32px #f9a825, -36px 36px #ff5722;
 `;
 export default ImageUpload;
