@@ -145,6 +145,26 @@ const getUsers = async (req, res) => {
   }
 };
 
+const getCurrentUser = (req, res) => {
+  const name = req.body.name;
+  const client = new MongoClient(MONGO_URI, options);
+  client.connect();
+  const db = client.db(DB_NAME);
+  let currUser = db.collection("users").find(name);
+  console.log(currUser, "currUser");
+  client.close();
+  if (!currUser) {
+    res.status(404).json({
+      message: "user not found!",
+    });
+  } else {
+    res.status(200).json({
+      status: 200,
+      data: currUser,
+    });
+  }
+};
+
 module.exports = {
   getMessagesById,
   getDestinations,
@@ -152,4 +172,5 @@ module.exports = {
   getMessages,
   nMessage,
   getUsers,
+  getCurrentUser,
 };

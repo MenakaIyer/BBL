@@ -8,13 +8,14 @@ import styled from "styled-components";
 import GlobalStyle from "./globalStyles";
 import SingleDestination from "./Components/SingleDestination";
 import ImageUpload from "./Components/ImageUpload";
+import PassPortProfile from "./Components/PassPortProfile";
 
 function App() {
   const [allUsers, setAllUsers] = useState([]);
-  // const [linkDisabled, setLinkDisabled] = useState(false);
   const [loggedInUser, setLoggedInUser] = useState("");
   const [userFriends, setUserFriends] = useState([]);
   const [currentUser, setCurrentUser] = useState([]);
+  const [linkDisabled, setLinkDisabled] = useState(false);
 
   useEffect(() => {
     fetch("/getUsers").then((response) =>
@@ -42,6 +43,19 @@ function App() {
 
         <BrowserRouter>
           <Switch>
+            <Route exact path="/">
+              <SignIn
+                allUsers={allUsers}
+                loggedInUser={loggedInUser}
+                setLoggedInUser={setLoggedInUser}
+                userFriends={userFriends}
+                setUserFriends={setUserFriends}
+                currentUser={currentUser}
+                setCurrentUser={setCurrentUser}
+                linkDisabled={linkDisabled}
+                setLinkDisabled={setLinkDisabled}
+              />
+            </Route>
             <Route path="/BBL/:id">
               <SingleDestination
                 allUsers={allUsers}
@@ -50,6 +64,18 @@ function App() {
                 currentUser={currentUser}
                 setCurrentUser={setCurrentUser}
               />
+            </Route>
+            <Route
+              path="/BetaBL/:name"
+              allUsers={allUsers}
+              loggedInUser={loggedInUser}
+              setLoggedInUser={setLoggedInUser}
+              userFriends={userFriends}
+              setUserFriends={setUserFriends}
+              currentUser={currentUser}
+              setCurrentUser={setCurrentUser}
+            >
+              <PassPortProfile />
             </Route>
           </Switch>
         </BrowserRouter>

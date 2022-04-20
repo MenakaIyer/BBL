@@ -3,13 +3,15 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import {DestinationContextProvider} from "./Context/DestinationContext.js";
-
+import { DestinationContextProvider } from "./Context/DestinationContext.js";
+import { CurrentUserProvider } from "./Context/CurrentUserContext";
 ReactDOM.render(
   <React.StrictMode>
-    <DestinationContextProvider>
-      <App />
-    </DestinationContextProvider>
+    <CurrentUserProvider>
+      <DestinationContextProvider>
+        <App />
+      </DestinationContextProvider>
+    </CurrentUserProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );
